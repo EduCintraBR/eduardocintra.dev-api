@@ -1,7 +1,8 @@
 import getUser from '../../utils/getUser'
 
 const apiGetUser = async (req, res) => {
-    const data = await getUser('educintrabr')
+    const username = 'educintrabr'
+    const data = await getUser(username)
     res.send(data)
 }
 
