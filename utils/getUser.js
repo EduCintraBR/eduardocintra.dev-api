@@ -6,7 +6,9 @@ const getUser = async (username) => {
     const myInfosGit = await fetch(`https://api.github.com/users/${username}`)
     const me = await myInfosGit.json()
 
-    const reposFiltered = repositories.filter(rep => rep.full_name.indexOf('EduCintraBR/eduardocintra.dev') === -1)
+    let reposFiltered = repositories.filter(rep => rep.full_name.indexOf('EduCintraBR/eduardocintra.dev') === -1)
+    reposFiltered = reposFiltered.filter(rep => rep.full_name.indexOf('EduCintraBR/EduCintraBR') === -1)
+    reposFiltered = reposFiltered.filter(rep => rep.fork !== true)
 
     const extractData = repo => ({
         id: repo.id,
