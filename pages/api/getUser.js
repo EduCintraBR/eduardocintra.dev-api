@@ -1,9 +1,10 @@
 import getUser from '../../utils/getUser'
+import initMiddleware from '../../lib/init-middleware'
 import Cors from 'cors'
 
 const cors = initMiddleware(
     Cors({
-        methods: ['GET', 'OPTIONS']
+        methods: ['GET', 'OPTIONS'],
     })
 )
 
